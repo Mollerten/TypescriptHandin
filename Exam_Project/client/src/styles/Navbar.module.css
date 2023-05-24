@@ -1,0 +1,42 @@
+.navbar {
+    display: flex;
+    /*justify-content: space-between;*/
+    align-items: center;
+    background-color: #F0BF00;
+    padding: 20px 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    margin-right: 10px;
+}
+
+.navbar li:last-child {
+    margin-right: 0;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #333;
+}
+
+.navbar a:hover {
+    color: #000;
+}
+
+.logoImage {
+    width: 50px; /* Adjust the width to your desired size */
+    height: auto; /* Maintain aspect ratio */
+}

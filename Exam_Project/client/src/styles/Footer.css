@@ -1,0 +1,25 @@
+.footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F0BF00;
+    padding: 20px;
+}
+
+.footer-content {
+    text-align: center;
+}
+
+.footer-content p {
+    color: #333;
+    margin: 5px;
+}
+
+.footer-content p:first-child {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.footer-content p:last-child {
+    font-size: 14px;
+}

@@ -1,0 +1,55 @@
+.owner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    background-color: #f5f5f5;
+    margin-top: 200px;
+    margin-bottom: 200px; /* Add a margin at the bottom to create space for the footer */
+}
+
+.owner-content {
+    border: 2px solid darkblue;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.owner-content h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.owner-content p {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.owner-content h3 {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.owner-content ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.owner-content li {
+    margin-bottom: 5px;
+}
+
+.owner-content li strong {
+    color: #333;
+}
+
+.owner-content li p {
+    color: #666;
+}

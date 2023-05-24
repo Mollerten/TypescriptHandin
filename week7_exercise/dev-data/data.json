@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1",
+    "model": "Audi",
+    "year": 2010,
+    "price": 10000,
+    "color": "red"
+  },
+  {
+    "id": "2",
+    "model": "Volvo",
+    "year": 2012,
+    "price": 12000,
+    "color": "blue"
+  },
+  {
+    "id": "3",
+    "model": "Saab",
+    "year": 2001,
+    "price": 5000,
+    "color": "green"
+  },
+  {
+    "id": "4",
+    "model": "BMW",
+    "year": 2015,
+    "price": 15000,
+    "color": "black"
+  },
+  {
+    "id": "5",
+    "model": "Mercedes",
+    "year": 2017,
+    "price": 20000,
+    "color": "red"
+  }
+]
+
