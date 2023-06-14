@@ -1,0 +1,19 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "excercise3.js",
+  "scripts": {
+    "start": "lite-server weather.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "lite-server": "^2.6.1",
+    "node-navigator": "^1.0.1",
+    "xmlhttprequest": "^1.8.0"
+  }
+}
