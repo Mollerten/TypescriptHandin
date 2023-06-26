@@ -1,19 +1,13 @@
-import mongoose, { Schema, Document } from 'mongoose';
+import mongoose, { Types } from 'mongoose';
 
-interface IPet extends Document {
-    id: string;
-    name: string;
-    species: string;
-    age: number;
-    ownerId: string;
-}
+const { ObjectId } = Types;
 
-const petSchema: Schema = new Schema({
-    id: { type: String, required: true },
+const petSchema = new mongoose.Schema({
     name: { type: String, required: true },
     species: { type: String, required: true },
     age: { type: Number, required: true },
-    ownerId: { type: String, required: true },
+    owner: { type: ObjectId, ref: 'Owner' },
+    imageUrl: { type: String, required: false },
 });
 
-export default mongoose.model<IPet>('Pet', petSchema);
+export default mongoose.model('Pet', petSchema);

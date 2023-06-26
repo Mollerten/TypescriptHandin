@@ -1,17 +1,12 @@
-import mongoose, { Schema, Document } from 'mongoose';
+import mongoose, { Types } from 'mongoose';
 
-interface IComment extends Document {
-    id: string;
-    content: string;
-    blogpostId: string;
-    ownerId: string;
-}
+const { ObjectId } = Types;
 
-const commentSchema: Schema = new Schema({
-    id: { type: String, required: true },
+const commentSchema = new mongoose.Schema({
     content: { type: String, required: true },
-    blogpostId: { type: String, required: true },
-    ownerId: { type: String, required: true },
-});
-
-export default mongoose.model<IComment>('Comment', commentSchema);
+    blogpost: { type: ObjectId, ref: 'Blogpost' },
+    owner: { type: ObjectId, ref: 'Owner'},
+    },
+    { timestamps: true }
+);
+export default mongoose.model('Comment', commentSchema);

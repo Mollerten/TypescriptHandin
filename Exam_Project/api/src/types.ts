@@ -35,6 +35,7 @@ type Context = {
     owners: Owner[];
     blogposts: Blogpost[];
     comments: Comment[];
+    login: Login;
 };
 
 type Login = {

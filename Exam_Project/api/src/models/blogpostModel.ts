@@ -1,19 +1,16 @@
-import mongoose, { Schema, Document } from 'mongoose';
+import mongoose, { Types } from 'mongoose';
 
-interface IBlogpost extends Document {
-    id: string;
-    title: string;
-    content: string;
-    ownerId: string;
-    imageurl: string;
-}
+const { ObjectId } = Types;
 
-const blogpostSchema: Schema = new Schema({
-    id: { type: String, required: true },
-    title: { type: String, required: true },
-    content: { type: String, required: true },
-    ownerId: { type: String, required: true },
-    imageurl: { type: String, required: true },
-});
+const blogpostSchema = new mongoose.Schema(
+    {
+        title: { type: String, required: true },
+        content: { type: String, required: true },
+        owner: { type: ObjectId, ref: 'Owner', required: true },
+        comments: [{ type: ObjectId, ref: 'Comment' }],
+        imageurl: { type: String },
+    },
+    { timestamps: true }
+);
 
-export default mongoose.model<IBlogpost>('Blogpost', blogpostSchema);
+export default mongoose.model('Blogpost', blogpostSchema);

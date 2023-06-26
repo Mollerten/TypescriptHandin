@@ -15,6 +15,7 @@
     species: string;
     age: number;
     owner: Owner;
+    imageUrl: string;
   }
   type Blogpost = {
     id: string;

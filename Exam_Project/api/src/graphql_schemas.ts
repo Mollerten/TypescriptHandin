@@ -7,6 +7,7 @@ const typeDefs = `#graphql
   species: String!
   age: Int!
   owner: Owner!
+  imageUrl: String
 }
 
   type Login {
@@ -31,8 +32,8 @@ type Blogpost {
   title: String!
   content: String!
   owner: Owner!
-  comments: [Comment!]!
-  imageurl: String!
+  comments: [Comment!]
+  imageurl: String
 }
 
 type Comment {
@@ -65,7 +66,7 @@ input CommentInput {
 input BlogpostInput {
   title: String!
   content: String!
-  imageurl: String!
+  imageurl: String
   ownerId: ID!
 }
 
@@ -81,6 +82,9 @@ type Query {
   blogposts: [Blogpost!]!
   comments: [Comment!]!
   blogpost(id: ID): Blogpost
+    comment(id: ID): Comment
+    pet(id: ID): Pet
+    
 }
 
 type Mutation {
@@ -96,7 +100,7 @@ type Mutation {
   deletePet(id: ID!): Boolean
   deleteBlogpost(id: ID!): Boolean
   deleteComment(id: ID!): Boolean
-  login(input: LoginInput!): Owner
+  login(input: LoginInput!) : Login
 }
 
 `;

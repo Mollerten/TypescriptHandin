@@ -1,0 +1,48 @@
+.create-pet-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.create-pet-form {
+    width: 400px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+}
+
+.create-pet-form h2 {
+    margin-bottom: 10px;
+}
+
+.create-pet-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.create-pet-form input[type="text"],
+.create-pet-form input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.create-pet-form button {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.create-pet-form button:hover {
+    background-color: #45a049;
+}
+
+.create-pet-form button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}

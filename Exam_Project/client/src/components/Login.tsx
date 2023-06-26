@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
+
 import LOGIN from '../queries/Login'; // Import the Login mutation
 import '../styles/Login.css';
 
 const Login = () => {
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
@@ -36,8 +38,7 @@ const Login = () => {
                 // Login successful
                 const token = data.login.token;
                 localStorage.setItem('token', token);
-                // Handle the token, such as storing it in local storage or context
-                // Redirect to authenticated routes or perform any necessary actions
+                setPassword('');
             } else {
                 console.log('Login failed');
                 const errorMessage = 'Invalid email or password';
@@ -49,9 +50,11 @@ const Login = () => {
             console.error('Error during login:', error);
             const errorMessage = 'An error occurred during login';
             setErrorMessage(errorMessage);
-            // Handle error messages or display appropriate feedback to the user
+            setPassword('');
         }
     };
+
+
 
     return (
         <div className="login-container">

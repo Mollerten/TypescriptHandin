@@ -6,12 +6,13 @@ import GetOwner from '../queries/GetOwner';
 import '../styles/OwnerViewer.css';
 import BlogpostViewer from './BlogpostViewer';
 import CreateBlogpost from './CreateBlogpost';
+import BlogpostCard from "./BlogpostCard";
 
 const OwnerViewer = () => {
-    const { ownerId } = useParams<{ ownerId: string }>(); // Extract the ownerId from the URL parameter
+    const { ownerId } = useParams<{ ownerId: string }>();
 
     const { loading, error, data } = useQuery(GetOwner, {
-        variables: { id: ownerId }, // Pass the ownerId as a variable named 'id'
+        variables: { ownerId }, // Pass the ownerId as a variable named 'id'
     });
 
     if (loading) {
@@ -30,23 +31,32 @@ const OwnerViewer = () => {
         // You can use useQuery or any other method to refetch the data
     };
 
+
     return (
         <div className="owner-container">
             <div className="owner-content">
-                <h2>{owner.name}</h2>
-                <p>Age: {owner.age}</p>
+                <div className="owner-info">
+                    <img src={owner.imageUrl} alt={owner.name} />
+                    <h2>{owner.name}</h2>
+                    <p>Age: {owner.age}</p>
+                </div>
                 <h3>Pets:</h3>
                 <ul>
                     {owner.pets.map((pet: Pet) => (
                         <li key={pet.id}>
-                            {pet.name} - {pet.species} (Age: {pet.age})
+                            <div className="pet-info">
+                                <img src={pet.imageUrl} alt={pet.name} />
+                                <p>{pet.name} - {pet.species} (Age: {pet.age})</p>
+                            </div>
                         </li>
                     ))}
                 </ul>
-                <CreateBlogpost onCreateBlogpost={handleCreateBlogpost} />
+                <h3>Blogposts:</h3>
+                {owner.blogposts.map((blogpost: Blogpost) => (
+                    <BlogpostCard key={blogpost.id} blogpost={blogpost} />
+                ))}
             </div>
         </div>
     );
 };
-
 export default OwnerViewer;
